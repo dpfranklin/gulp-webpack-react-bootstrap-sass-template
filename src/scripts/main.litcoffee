@@ -6,11 +6,13 @@ If compiling for production, require React using native React minified package, 
 
     if __PRODUCTION__
       require("script!react/react-with-addons.min.js")
+      require("script!react/react-dom.js")
 
 Otherwise, require React development package:
 
     else
       require("script!react/react-with-addons.js")
+      require("script!react/react-dom.js")
 
 **NB**: `__PRODUCTION__` is a variable defined using webpack `DefinePlugin`, it is substituted with its boolean value
 before evaluation. The dead `if ... else` branch is eliminated during minification.
@@ -26,5 +28,5 @@ Require app:
 Render app:
 
     githubUrl = 'https://github.com/glebm/gulp-webpack-react-bootstrap-sass-template'
-    React.render(`<StarterApp githubUrl={githubUrl}/>`, document.getElementById('app'))
+    ReactDOM.render(`<StarterApp githubUrl={githubUrl}/>`, document.getElementById('app'))
 

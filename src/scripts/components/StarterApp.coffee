@@ -66,8 +66,8 @@ renderPoweredByItems = (items) ->
   items.map (item, i) ->
     imageURL = item.logoURL
     `(
-      <HeartbeatAnimationGroup phase={200 * ((i + n / 2) % n)}>
-      <img className='img-responsive' src={imageURL} key={imageURL} />
+      <HeartbeatAnimationGroup phase={200 * ((i + n / 2) % n)} key={i} >
+      <img className='img-responsive' src={imageURL} key={i} />
       </HeartbeatAnimationGroup>
     )`
 
